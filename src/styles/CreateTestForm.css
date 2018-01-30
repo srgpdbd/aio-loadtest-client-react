@@ -1,0 +1,22 @@
+.create-test-form {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.form-block {
+    margin-bottom: 45px;
+}
+
+.form-block.form-block-left {
+    vertical-align: top;
+}
+.form-block.form-block-right {
+}
+
+.form-block .form-field {
+    display: block !important;
+}
+
+h3 {
+    color: #777;
+}

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  background: #348f50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #348f50, #56b4d3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #348f50, #56b4d3);
+}
+
+.row .col {
+  display: inline-block;
+}
+
+.row .col-20 {
+  width: 20%;
+}
+
+.row .col-30 {
+  width: 30%;
+}
+
+.row .col-50 {
+  width: 50%;
+}
+
+.row .col-70 {
+  width: 70%;
+}
+
+.row .col-80 {
+  width: 80%;
+}
+
+.m-t-1 {
+  margin-top: 1rem;
+}
+
+.m-t-2 {
+  margin-top: 2rem;
+}
+
+.m-t-3 {
+  margin-top: 3rem;
+}
+
+.m-t-4 {
+  margin-top: 4rem;
+}
