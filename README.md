@@ -8,7 +8,7 @@ Web client for [aio-loadtest](https://github.com/AlesDokshanin/aio-loadtest) wri
 ```bash
 npm install
 ```
-2. Run the app
+3. Run the app
 ```bash
 npm start
 ```
