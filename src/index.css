@@ -46,3 +46,15 @@ body {
 .m-t-4 {
   margin-top: 4rem;
 }
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}

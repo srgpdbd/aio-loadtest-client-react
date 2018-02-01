@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import * as testActions from '../action-creators/tests';
+import * as factoryRunActions from '../action-creators/factory-run';
+import * as editorActions from '../action-creators/editor';
 import CreateTestForm from '../components/CreateTestForm';
 
 
@@ -11,13 +13,18 @@ class CreateTest extends Component {
 
   static propTypes = {
     testActions: PropTypes.object.isRequired,
+    factoryRunActions: PropTypes.object.isRequired,
+    factoryRun: PropTypes.object.isRequired,
+    editor: PropTypes.object.isRequired,
+    editorActions: PropTypes.object.isRequired,
+
     currentTest: PropTypes.string,
   };
 
   create = data => this.props.testActions.createTest(data);
 
   render() {
-    const { currentTest, testActions } = this.props;
+    const { currentTest, testActions, factoryRunActions, factoryRun, editor, editorActions } = this.props;
 
     return (
       <div>
@@ -30,7 +37,12 @@ class CreateTest extends Component {
               </div>
             </div>
           ) : (
-            <CreateTestForm create={this.create} />
+            <CreateTestForm
+              create={this.create}
+              editor={editor}
+              editorActions={editorActions}
+              factoryRunActions={factoryRunActions}
+              factoryRun={factoryRun} />
           )
         }
       </div>
@@ -41,9 +53,13 @@ class CreateTest extends Component {
 
 export default connect(
   state => ({
+    factoryRun: state.factoryRun,
     currentTest: state.tests.currentTest,
+    editor: state.editor,
   }),
   dispatch => ({
     testActions: bindActionCreators(testActions, dispatch),
+    factoryRunActions: bindActionCreators(factoryRunActions, dispatch),
+    editorActions: bindActionCreators(editorActions, dispatch),
   })
 )(CreateTest);

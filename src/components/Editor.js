@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AceEditor from 'react-ace';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import 'brace/mode/python';
 import 'brace/theme/monokai';
 import 'brace/theme/github';
@@ -11,11 +9,10 @@ import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import * as editorActions from '../action-creators/editor';
 import '../styles/Editor.css';
 
 
-class Editor extends Component {
+export default class Editor extends Component {
 
   static propTypes = {
     fontSize: PropTypes.number.isRequired,
@@ -96,13 +93,3 @@ class Editor extends Component {
   }
 
 }
-
-export default connect(
-  state => ({
-    fontSize: state.editor.fontSize,
-    theme: state.editor.theme,
-  }),
-  dispatch => ({
-    editorActions: bindActionCreators(editorActions, dispatch)
-  }),
-)(Editor);
