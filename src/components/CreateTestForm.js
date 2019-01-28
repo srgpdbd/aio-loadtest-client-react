@@ -30,7 +30,11 @@ def factory(user_params):
     """
     Return a list of request config dicts from this function
     """
-    pass
+    return {
+        "url": "https://google.com",
+        "method": "GET",
+        "headers": "*",
+    }
 `;
 
 class CreateTestForm extends Component {
