@@ -24,17 +24,19 @@ def pre_test():
     This code will be called once before test starts and 
     whatever this function returns will be passed to request factory as kwargs
     """
-    pass
+    return {}
 
 def factory(user_params):
     """
     Return a list of request config dicts from this function
     """
-    return {
-        "url": "https://google.com",
-        "method": "GET",
-        "headers": "*",
-    }
+    return [
+        {
+            "url": "https://google.com",
+            "method": "GET",
+            "headers": "*",
+        },
+    ]
 `;
 
 class CreateTestForm extends Component {
