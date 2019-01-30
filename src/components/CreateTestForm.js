@@ -35,6 +35,7 @@ def factory(user_params):
             "url": "https://google.com",
             "method": "GET",
             "headers": "*",
+            "timeout": 0,
         },
     ]
 `;
